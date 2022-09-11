@@ -65,9 +65,6 @@
     </table>
 
     <div th:with="start=${(items.number/maxPage)*maxPage + 1}, end=(${(items.totalPages == 0) ? 1 : (start + (maxPage - 1) < items.totalPages ? start + (maxPage - 1) : items.totalPages)})" >
-      <h1 th:text = "${items.totalPages}"></h1>
-      <h1 th:text = "${start}"></h1>
-      <h1 th:text = "${items.number}"></h1>
       <ul class="pagination justify-content-center">
 
         <li class="page-item" th:classappend="${items.first}?'disabled'">
