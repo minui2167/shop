@@ -32,7 +32,7 @@ public class ItemImgService {
         //파일 업로드
         if(!StringUtils.isEmpty(oriImgName)) {
             imgName = fileService.uploadFile(itemImgLocation, oriImgName, itemImgFile.getBytes());
-            imgUrl = "/images/item/" + imgName;
+            imgUrl = "https://minui2167-image-test.s3.ap-northeast-2.amazonaws.com/" + imgName;
         }
 
         //상품 이미지 정보 저장
@@ -46,12 +46,12 @@ public class ItemImgService {
 
             //기존 이미지 파일 삭제
             if(!StringUtils.isEmpty(savedItemImg.getImgName())) {
-                fileService.deleteFile(itemImgLocation + "/" + savedItemImg.getImgName());
+                fileService.deleteFile(savedItemImg.getImgName());
             }
 
             String oriImgName = itemImgFile.getOriginalFilename();
             String imgName = fileService.uploadFile(itemImgLocation, oriImgName, itemImgFile.getBytes());
-            String imgUrl = "/images/item/" + imgName;
+            String imgUrl = "https://minui2167-image-test.s3.ap-northeast-2.amazonaws.com/" + imgName;
             savedItemImg.updateItemImg(oriImgName, imgName, imgUrl);
         }
     }
