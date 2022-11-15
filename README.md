@@ -1,6 +1,7 @@
 # shop
+springboot 쇼핑몰
 
-http://43.200.160.135:8081/
+http://3.34.236.67:8080/
 
 # stack
 ![java](https://img.shields.io/badge/java-3670A0?style=for-the-badge&logo=java&logoColor=ffdd54)
